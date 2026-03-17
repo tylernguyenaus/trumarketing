@@ -173,6 +173,27 @@ export const About: React.FC = () => {
           ))}
         </div>
       </motion.div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-20 md:mt-24 p-8 md:p-12 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col items-center text-center relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-orange-500/5 blur-3xl rounded-full pointer-events-none" />
+        <h3 className="text-xl md:text-3xl text-white font-bold mb-4 relative z-10 leading-relaxed max-w-3xl">
+          Let’s build something that actually moves the needle.
+        </h3>
+        <p className="text-zinc-400 mb-8 relative z-10 max-w-2xl font-light">
+          If you have something in mind, let’s turn it into execution.
+        </p>
+        <a
+          href="mailto:scale.trumarketing@gmail.com"
+          className="relative z-10 group inline-flex items-center gap-2 px-8 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:scale-105"
+        >
+          Let’s Talk →
+        </a>
+      </motion.div>
     </div>
   );
 };

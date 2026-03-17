@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { BarChart3, Target, Zap, Globe, Layers, Users, ChevronDown } from 'lucide-react';
+import { BarChart3, Zap, Globe, ChevronDown } from 'lucide-react';
 
 const FeatureCard: React.FC<{
   icon: React.ReactNode;
@@ -35,33 +35,18 @@ export const ValueDetails: React.FC = () => {
   const features = [
     {
       icon: <BarChart3 size={24} />,
-      title: "Commercial Strategy & CapEx",
-      description: "Bridging the gap between financial constraints and market demands. I build CapEx-aligned marketing models that protect runway while driving scalable, aggressive growth."
-    },
-    {
-      icon: <Target size={24} />,
-      title: "Go-To-Market & Localization",
-      description: "Translating high-level investment visions into local market realities. I design omnichannel launch strategies that capture target demographics and secure high-value contracts."
+      title: "Commercial Strategy & Growth Systems",
+      description: "Designing scalable growth by aligning market opportunity, financial constraints, and execution models."
     },
     {
       icon: <Zap size={24} />,
-      title: "Applied AI & Automation",
-      description: "Leveraging Generative AI to automate complex marketing workflows, drastically lowering CAC, and accelerating visual prototyping and content production."
+      title: "Applied AI & Campaign Prototyping",
+      description: "Leveraging generative AI to rapidly test, validate, and deploy high-impact marketing and go-to-market initiatives."
     },
     {
       icon: <Globe size={24} />,
-      title: "Nordic & Global Expansion",
-      description: "Helping Nordic sustainable energy and tech brands scale internationally by navigating cross-cultural communication and deeply localizing brand positioning."
-    },
-    {
-      icon: <Layers size={24} />,
-      title: "Supply Chain & Operations",
-      description: "Unique expertise in remote global procurement (TCO/AQL). I build the operational and logistical backend required to support aggressive front-end B2B and B2C sales."
-    },
-    {
-      icon: <Users size={24} />,
-      title: "Strategic B2B Partnerships",
-      description: "Flipping budget constraints into unique selling propositions. I actively negotiate zero-cost sourcing partnerships and robust B2B pipelines to accelerate revenue generation."
+      title: "Brand, Operations & Market Expansion",
+      description: "Building brands and operational systems that scale across markets with precision, localization, and execution discipline."
     }
   ];
 
@@ -136,7 +121,7 @@ export const ValueDetails: React.FC = () => {
         })}
       </div>
 
-      <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div className="hidden md:grid grid-cols-3 gap-4 sm:gap-6">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}

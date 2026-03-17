@@ -11,65 +11,13 @@ export const Work: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 md:pt-32 pb-24 px-6 max-w-7xl mx-auto relative z-10">
-       <div className="mb-14 md:mb-20">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 text-white tracking-tighter">
-          Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Work</span>
-        </h1>
-        <p className="text-xl text-zinc-300 font-light max-w-2xl">
-          A showcase of projects where strategic thinking met creative execution.
-        </p>
-      </div>
-
-      <div className="space-y-16 md:space-y-24 mb-24 md:mb-32">
-        {orderedProjects.map((project, index) => (
-          <motion.div 
-            key={project.id}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row gap-8 md:gap-12 items-center group"
-          >
-            {/** Keep Dojoy uncropped while preserving card dimensions */}
-            <Link 
-              to={`/work/${project.id}`} 
-              className={`flex-1 w-full cursor-pointer ${index % 2 === 1 ? 'md:order-2' : ''}`}
-            >
-               <div className={`relative rounded-2xl overflow-hidden aspect-video border border-white/10 ${project.id === 'dojoy-toys' ? 'bg-black/40 p-2' : ''}`}>
-                  <div className="absolute inset-0 bg-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
-                  <img src={project.image} alt={project.title} className={`w-full h-full ${project.id === 'dojoy-toys' ? 'object-contain' : 'object-cover'} transform group-hover:scale-105 transition-transform duration-700`} />
-               </div>
-            </Link>
-            
-            <div className="flex-1 space-y-6">
-               <div className="text-orange-500 font-mono text-sm tracking-widest uppercase">{project.category}</div>
-               <h2 className="text-3xl md:text-4xl font-bold text-white group-hover:text-orange-100 transition-colors break-words">
-                 <Link to={`/work/${project.id}`}>{project.title}</Link>
-               </h2>
-               <div className="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full text-orange-200 font-semibold mb-4">
-                  {project.result}
-               </div>
-               <p className="text-zinc-300 text-lg font-light leading-relaxed">
-                 {project.shortDesc}
-               </p>
-               <Link 
-                 to={`/work/${project.id}`}
-                 className="inline-flex items-center gap-2 text-white border-b border-orange-500 pb-1 hover:text-orange-400 transition-colors"
-               >
-                 Read Case Study <ArrowRight size={16} />
-               </Link>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
+    <div className="pt-12 md:pt-16 pb-24 px-6 max-w-7xl mx-auto relative z-10">
       {/* AI-Driven Campaign Prototyping Section */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        className="border-t border-white/10 pt-20 md:pt-24"
+        className="pt-12 md:pt-14"
       >
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
@@ -165,6 +113,79 @@ export const Work: React.FC = () => {
             </div>
           </div>
         </div>
+      </motion.div>
+
+      <div className="mt-10 md:mt-12 mb-8 md:mb-10">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 text-white tracking-tighter">
+          Selected <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Work</span>
+        </h1>
+        <p className="text-xl text-zinc-300 font-light max-w-2xl">
+          A showcase of projects where strategic thinking met creative execution.
+        </p>
+      </div>
+
+      <div className="space-y-16 md:space-y-24 mb-12 md:mb-16">
+        {orderedProjects.map((project, index) => (
+          <motion.div 
+            key={project.id}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col md:flex-row gap-8 md:gap-12 items-center group"
+          >
+            {/** Keep Dojoy uncropped while preserving card dimensions */}
+            <Link 
+              to={`/work/${project.id}`} 
+              className={`flex-1 w-full cursor-pointer ${index % 2 === 1 ? 'md:order-2' : ''}`}
+            >
+               <div className={`relative rounded-2xl overflow-hidden aspect-video border border-white/10 ${project.id === 'dojoy-toys' ? 'bg-black/40 p-2' : ''}`}>
+                  <div className="absolute inset-0 bg-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"></div>
+                  <img src={project.image} alt={project.title} className={`w-full h-full ${project.id === 'dojoy-toys' ? 'object-contain' : 'object-cover'} transform group-hover:scale-105 transition-transform duration-700`} />
+               </div>
+            </Link>
+            
+            <div className="flex-1 space-y-6">
+               <div className="text-orange-500 font-mono text-sm tracking-widest uppercase">{project.category}</div>
+               <h2 className="text-3xl md:text-4xl font-bold text-white group-hover:text-orange-100 transition-colors break-words">
+                 <Link to={`/work/${project.id}`}>{project.title}</Link>
+               </h2>
+               <div className="inline-block px-4 py-2 bg-white/5 border border-white/10 rounded-full text-orange-200 font-semibold mb-4">
+                  {project.result}
+               </div>
+               <p className="text-zinc-300 text-lg font-light leading-relaxed">
+                 {project.shortDesc}
+               </p>
+               <Link 
+                 to={`/work/${project.id}`}
+                 className="inline-flex items-center gap-2 text-white border-b border-orange-500 pb-1 hover:text-orange-400 transition-colors"
+               >
+                 Read Case Study <ArrowRight size={16} />
+               </Link>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mt-12 md:mt-16 p-8 md:p-12 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col items-center text-center relative overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-orange-500/5 blur-3xl rounded-full pointer-events-none" />
+        <h3 className="text-xl md:text-3xl text-white font-bold mb-4 relative z-10 leading-relaxed max-w-3xl">
+          Get to know the person behind the work.
+        </h3>
+        <p className="text-zinc-400 mb-8 relative z-10 max-w-2xl font-light">
+          A closer look at the journey, mindset, and approach behind the execution.
+        </p>
+        <Link
+          to="/about"
+          className="relative z-10 group inline-flex items-center gap-2 px-8 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:scale-105"
+        >
+          About Me →
+        </Link>
       </motion.div>
     </div>
   );

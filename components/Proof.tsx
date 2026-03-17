@@ -61,7 +61,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ id, title, category, image, summa
 
 export const Proof: React.FC = () => {
   return (
-    <section id="work" className="px-4 sm:px-6 max-w-7xl mx-auto pb-16 md:pb-20 pt-8 md:pt-10">
+    <section id="work" className="px-4 sm:px-6 max-w-7xl mx-auto pb-10 md:pb-14 pt-8 md:pt-10">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-4 md:gap-6">
         <div>
            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">Selected Work</h2>

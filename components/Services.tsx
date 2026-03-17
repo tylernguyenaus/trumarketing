@@ -83,9 +83,9 @@ export const Services: React.FC = () => {
         <h2 className="text-3xl font-bold mb-12 text-center">My Process</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
            {[
-             { step: "01", title: "Discovery", desc: "Deep dive into your data, financials, and market positioning." },
-             { step: "02", title: "Strategy", desc: "Architecting the CapEx-aligned roadmap and go-to-market hypotheses." },
-             { step: "03", title: "Execution", desc: "Launching omnichannel campaigns and managing strategic partnerships." },
+             { step: "01", title: "Discover", desc: "Deep dive into your data, financials, and market positioning." },
+             { step: "02", title: "Architect", desc: "Architecting the CapEx-aligned roadmap and go-to-market hypotheses." },
+             { step: "03", title: "Execute", desc: "Launching omnichannel campaigns and managing strategic partnerships." },
              { step: "04", title: "Optimize", desc: "Utilizing data and AI to continuously refine performance and maximize ROI." }
            ].map((item, i) => (
              <div key={i} className="relative p-6 border-l border-white/10 pl-8">
@@ -102,7 +102,7 @@ export const Services: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="mt-32 p-8 md:p-12 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col items-center text-center relative overflow-hidden"
+        className="mt-20 md:mt-24 p-8 md:p-12 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col items-center text-center relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-orange-500/5 blur-3xl rounded-full pointer-events-none" />
         <h3 className="text-xl md:text-3xl text-white font-bold mb-8 relative z-10 leading-relaxed max-w-3xl">
