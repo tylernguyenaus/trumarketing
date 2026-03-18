@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star } from 'lucide-react';
 
 export const Hero: React.FC = () => {
+  const [desktopImageLoaded, setDesktopImageLoaded] = React.useState(false);
+
   return (
     <section className="relative pt-16 md:pt-32 px-4 sm:px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-start gap-2 md:gap-6">
       {/* Text Content */}
@@ -127,7 +129,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Hero Image / Visual */}
-      <div className="hidden md:block relative w-full md:w-auto md:flex-[0_0_auto]">
+      <div className="hidden md:block relative w-full md:w-[460px] md:flex-[0_0_auto]">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -142,7 +144,11 @@ export const Hero: React.FC = () => {
             <img 
               src="/images/profile.jpg" 
               alt="Tyler N. Tru"
-              className="w-full h-full object-contain object-center opacity-100 hover:scale-105 transition-transform duration-700 ease-out"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              onLoad={() => setDesktopImageLoaded(true)}
+              className={`w-full h-full object-contain object-center hover:scale-105 transition-all duration-700 ease-out ${desktopImageLoaded ? 'opacity-100' : 'opacity-0'}`}
             />
             {/* Overlay to ensure text readability if needed, but keeping it bright for now */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
