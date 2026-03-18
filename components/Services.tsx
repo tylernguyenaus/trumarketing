@@ -79,7 +79,7 @@ export const Services: React.FC = () => {
       </div>
 
       {/* Process Section */}
-      <div className="mt-20 md:mt-32">
+      <div className="mt-20 md:mt-32 lg:mt-28">
         <h2 className="text-3xl font-bold mb-12 text-center">My Process</h2>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
            {[
