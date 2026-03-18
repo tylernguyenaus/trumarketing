@@ -14,11 +14,6 @@ export const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300 text-[11px] sm:text-xs font-medium mb-2 md:mb-6 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse shadow-[0_0_15px_rgba(249,115,22,0.8)]"></span>
-            Available for new projects in Finland and Remote
-          </div>
-          
           <div className="relative">
             {/* Glow behind text */}
             <div className="absolute -inset-10 bg-orange-500/20 blur-[60px] -z-10 rounded-full opacity-50"></div>
@@ -93,6 +88,11 @@ export const Hero: React.FC = () => {
               <div className="absolute -inset-4 bg-orange-500/40 blur-3xl -z-10 rounded-full"></div>
               <div className="absolute -inset-1 bg-gradient-to-tr from-orange-400 to-transparent opacity-30 blur-md -z-10 rounded-3xl"></div>
             </motion.div>
+          </div>
+
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-300 text-[11px] sm:text-xs font-medium mb-4 md:mb-8 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse shadow-[0_0_15px_rgba(249,115,22,0.8)]"></span>
+            Available for new projects in Finland and Remote
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-0 w-full">
