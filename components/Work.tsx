@@ -1,14 +1,32 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, X } from 'lucide-react';
 import { projects } from './projectsData';
 
 export const Work: React.FC = () => {
+  const [activeVideo, setActiveVideo] = React.useState<'abb' | 'wetech' | null>(null);
   const projectOrder = ['song-platform', 'heuritech-strategy', 'gen-z-coliving', 'dojoy-toys'];
   const orderedProjects = [...projects].sort(
     (a, b) => projectOrder.indexOf(a.id) - projectOrder.indexOf(b.id)
   );
+  const videoEmbeds = {
+    abb: 'https://www.youtube.com/embed/BxbOMGp085s?autoplay=1&rel=0',
+    wetech: 'https://www.youtube.com/embed/7yDaTu9B8KQ?autoplay=1&rel=0',
+  } as const;
+
+  React.useEffect(() => {
+    if (!activeVideo) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setActiveVideo(null);
+      }
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeVideo]);
 
   return (
     <div className="pt-12 md:pt-16 pb-24 px-6 max-w-7xl mx-auto relative z-10">
@@ -35,10 +53,9 @@ export const Work: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1: ABB */}
           <div className="group rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/50 hover:bg-zinc-900/80 transition-all duration-300 overflow-hidden flex flex-col">
-            <a
-              href="https://drive.google.com/file/d/1Oo7bGRJlPIMiEt-tjn5M6Y3lAv8gp6pS/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => setActiveVideo('abb')}
               className="relative aspect-video overflow-hidden block"
               aria-label="Watch ABB Strategic Outreach video"
             >
@@ -53,7 +70,7 @@ export const Work: React.FC = () => {
                   <Play fill="currentColor" size={24} className="ml-1" />
                 </div>
               </div>
-            </a>
+            </button>
             
             <div className="p-8 flex flex-col flex-grow">
                <div className="text-orange-500 font-mono text-xs tracking-widest uppercase mb-3">CONCEPT CAMPAIGN</div>
@@ -62,23 +79,21 @@ export const Work: React.FC = () => {
                  A highly targeted, AI-enhanced video pitch designed to demonstrate localized brand storytelling for global energy leaders.
                </p>
                
-               <a 
-                 href="https://drive.google.com/file/d/1Oo7bGRJlPIMiEt-tjn5M6Y3lAv8gp6pS/view?usp=sharing"
-                 target="_blank"
-                 rel="noopener noreferrer"
+               <button
+                 type="button"
+                 onClick={() => setActiveVideo('abb')}
                  className="inline-flex items-center gap-2 text-white font-semibold hover:text-orange-400 transition-colors w-max"
                >
                  Watch Video <ArrowRight size={18} />
-               </a>
+               </button>
             </div>
           </div>
 
           {/* Card 2: WE Tech */}
           <div className="group rounded-2xl bg-white/[0.03] border border-white/10 hover:border-orange-500/50 hover:bg-zinc-900/80 transition-all duration-300 overflow-hidden flex flex-col">
-             <a
-               href="https://drive.google.com/file/d/1LiFT876PUnI0VBGFB6AGPC6tHbvkshRc/view?usp=sharing"
-               target="_blank"
-               rel="noopener noreferrer"
+             <button
+               type="button"
+               onClick={() => setActiveVideo('wetech')}
                className="relative aspect-video overflow-hidden block"
                aria-label="Watch WE Tech Solutions Maritime Innovation video"
              >
@@ -93,7 +108,7 @@ export const Work: React.FC = () => {
                    <Play fill="currentColor" size={24} className="ml-1" />
                  </div>
                </div>
-            </a>
+            </button>
             
             <div className="p-8 flex flex-col flex-grow">
                <div className="text-orange-500 font-mono text-xs tracking-widest uppercase mb-3">CONCEPT CAMPAIGN</div>
@@ -102,14 +117,13 @@ export const Work: React.FC = () => {
                  A speculative digital campaign translating complex sustainable marine technology into compelling, digestible visual narratives.
                </p>
                
-               <a 
-                 href="https://drive.google.com/file/d/1LiFT876PUnI0VBGFB6AGPC6tHbvkshRc/view?usp=sharing"
-                 target="_blank"
-                 rel="noopener noreferrer"
+               <button
+                 type="button"
+                 onClick={() => setActiveVideo('wetech')}
                  className="inline-flex items-center gap-2 text-white font-semibold hover:text-orange-400 transition-colors w-max"
                >
                  Watch Video <ArrowRight size={18} />
-               </a>
+               </button>
             </div>
           </div>
         </div>
@@ -187,6 +201,37 @@ export const Work: React.FC = () => {
           About Me →
         </Link>
       </motion.div>
+
+      {activeVideo && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setActiveVideo(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Video player modal"
+        >
+          <div
+            className="relative w-full max-w-5xl aspect-video bg-black rounded-xl overflow-hidden border border-white/10"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveVideo(null)}
+              className="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-black/60 hover:bg-black/80 text-white flex items-center justify-center transition-colors"
+              aria-label="Close video modal"
+            >
+              <X size={18} />
+            </button>
+            <iframe
+              src={videoEmbeds[activeVideo]}
+              title={activeVideo === 'abb' ? 'ABB Strategic Outreach' : 'WE Tech Solutions Maritime Innovation'}
+              className="w-full h-full"
+              allow="autoplay; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
