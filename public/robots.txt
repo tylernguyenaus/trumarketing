@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tylertruworks.com/sitemap.xml
+
