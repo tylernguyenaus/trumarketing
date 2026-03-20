@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from "@vercel/analytics/react";
 import { Navbar } from './components/Navbar';
 import { BackgroundEffects } from './components/BackgroundEffects';
 import { Footer } from './components/Footer';
@@ -45,6 +46,7 @@ const App: React.FC = () => {
 
         <Footer />
       </div>
+      <Analytics />
     </Router>
   );
 };
