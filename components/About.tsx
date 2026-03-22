@@ -188,7 +188,7 @@ export const About: React.FC = () => {
           If you have something in mind, let’s turn it into execution.
         </p>
         <a
-          href="mailto:scale.trumarketing@gmail.com"
+          href="mailto:tylertruworks@gmail.com"
           className="relative z-10 group inline-flex items-center gap-2 px-8 py-3 bg-orange-600 hover:bg-orange-500 text-white font-bold rounded-full transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:scale-105"
         >
           Let’s Talk →

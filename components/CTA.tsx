@@ -25,7 +25,7 @@ export const CTA: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="mailto:scale.trumarketing@gmail.com"
+            href="mailto:tylertruworks@gmail.com"
             className="w-full sm:w-auto px-8 py-4 bg-orange-500 text-white font-bold rounded-full hover:bg-orange-400 transition-all flex items-center justify-center gap-2 shadow-[0_0_40px_rgba(249,115,22,0.6)] border border-orange-300/30 hover:scale-105"
           >
             <Mail size={18} />

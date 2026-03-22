@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
 
         <div className="hidden md:block">
           <a
-            href="mailto:scale.trumarketing@gmail.com"
+            href="mailto:tylertruworks@gmail.com"
             className="px-5 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-zinc-200 transition-colors"
           >
             Contact me
@@ -100,7 +100,7 @@ export const Navbar: React.FC = () => {
                 </Link>
               ))}
               <a
-                href="mailto:scale.trumarketing@gmail.com"
+                href="mailto:tylertruworks@gmail.com"
                 className="mt-4 px-5 py-3 bg-orange-600 text-white text-center rounded-lg font-semibold"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

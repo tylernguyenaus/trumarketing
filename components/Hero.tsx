@@ -97,7 +97,7 @@ export const Hero: React.FC = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center mb-0 w-full">
             <a
-              href="mailto:scale.trumarketing@gmail.com"
+              href="mailto:tylertruworks@gmail.com"
               className="group w-full sm:w-auto flex items-center justify-center gap-2 px-7 py-3.5 sm:px-8 sm:py-4 bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white rounded-full font-semibold transition-all hover:scale-105 shadow-[0_0_40px_rgba(234,88,12,0.5)] border border-orange-300/30 shrink-0"
             >
               Let's talk
